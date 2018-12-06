@@ -1,0 +1,28 @@
+body#body {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+div#input {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #DDDDDD;
+}
+
+div#button {
+    margin: 0 0 10px 10px;
+}
+
+div#button button {
+    padding: 0 10px;
+}
+
+span.openrelation {
+    color: red;
+}
+
+span.openrelation:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+}

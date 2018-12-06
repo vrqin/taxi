@@ -1,0 +1,259 @@
+@charset "utf-8";
+/* CSS Document */
+html, body {
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
+
+body {
+    min-width: 1200px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* header */
+header {
+    height: 80px;
+    background: url(../images/headerTitle.png) no-repeat 30px center;
+}
+
+/* banner */
+section#banner {
+    width: 100%;
+    position: relative;
+}
+
+img#bannerBg {
+    width: 100%;
+}
+
+img#bannerText {
+    width: 842px;
+    height: 212px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* 导航 */
+nav {
+    padding-top: 60px;
+}
+
+nav > h2 {
+    font-family: 'TaxiSMP';
+    font-size: 28px;
+    color: #f23f5f;
+    text-align: center;
+    line-height: 1em;
+}
+
+nav > p {
+    font-family: 'Microsoft YaHei';
+    font-weight: lighter;
+    font-size: 16px;
+    color: #6e6a6f;
+    text-align: center;
+    line-height: 1em;
+    padding: 17px 0 29px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+nav > p::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 2px;
+    background: #cbcbcd;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+section.navBar {
+    width: 270px;
+    height: 344px;
+    margin: 0 13px 20px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+section.navBar div {
+    width: 100%;
+    height: 270px;
+    border: 1px solid #dadadc;
+    border-radius: 2px;
+    background: #ffffff;
+    position: relative;
+    transition: all 0.2s ease-in 0s;
+}
+
+section.navBar div::before, section.navBar div::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 8px 7px 0 7px;
+    border-style: solid;
+    position: absolute;
+    left: 128px;
+    transition: all 0.2s ease-in 0s;
+}
+
+section.navBar div::before {
+    border-color: #4a454b transparent transparent transparent;
+    top: 232px;
+}
+
+section.navBar div::after {
+    border-color: white transparent transparent transparent;
+    top: 230px;
+}
+
+h3.icons {
+    width: 90px;
+    height: 90px;
+    color: #302829;
+    border-radius: 50%;
+    background: #efeff0;
+    margin: 30px auto 0;
+    transition: all 0.2s ease-in 0s;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+span.icon {
+    font-size: 42px;
+    top: 25px;
+    left: 24px;
+}
+
+h2.navTitle {
+    font-family: 'TaxiSMP';
+    font-size: 22px;
+    color: #302829;
+    text-align: center;
+    padding: 23px 0 18px 0;
+    margin-bottom: 12px;
+    position: relative;
+    transition: all 0.2s ease-in 0s;
+}
+
+h2.navTitle::after {
+    content: '';
+    display: block;
+    width: 34px;
+    height: 2px;
+    background: #cbcbcd;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: all 0.2s ease-in 0s;
+}
+
+p.introduce {
+    font-family: 'Microsoft YaHei';
+    color: white;
+    line-height: 2em;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.2s ease-in 0s;
+}
+
+a.read {
+    width: 90px;
+    height: 29px;
+    display: block;
+    font-family: 'Microsoft YaHei';
+    color: white;
+    text-align: center;
+    line-height: 29px;
+    border-radius: 2px;
+    background: #4a454b;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    margin: 0 auto;
+    z-index: 99;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s ease-in 0.2s;
+}
+
+a.read:hover {
+    background: #645f65;
+}
+
+/* 过渡动画 */
+section.navBar div:hover {
+    height: 344px;
+    background: #f23f5f;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.20);
+}
+
+section.navBar div:hover::before, section.navBar div:hover::after {
+    opacity: 0;
+}
+
+section.navBar div:hover h3.icons {
+    background: #ffffff;
+    color: #f23f5f;
+    animation: rotate 1.5s linear 0s infinite normal;
+    -webkit-animation: rotate 1.5s linear 0s infinite normal;
+}
+
+section.navBar div:hover h2.navTitle {
+    color: #ffffff;
+}
+
+section.navBar div:hover h2.navTitle::after {
+    width: 70px;
+    background: #ffffff;
+}
+
+section.navBar div:hover p.introduce {
+    opacity: 1;
+}
+
+section.navBar div:hover a.read {
+    opacity: 1;
+}
+
+/* 版权 */
+footer {
+    width: 100%;
+    height: 40px;
+    background: #2e282f;
+    color: white;
+    line-height: 40px;
+    text-align: center;
+}

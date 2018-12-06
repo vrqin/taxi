@@ -1,0 +1,45 @@
+.table {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+}
+
+.table tbody tr td {
+    position: relative;
+}
+
+#defaultPhoto {
+    width: 136px;
+    border: 1px solid #DDDDDD;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 128px;
+}
+
+#fileTd {
+    text-align: left;
+    padding-left: 34px;
+}
+
+.required {
+    color: red;
+}
+
+label {
+    margin: 0;
+    padding: 0;
+    width: 115px;
+    font-size: 14px;
+    line-height: 30px;
+    display: inline-block;
+    text-align: right;
+}
+
+input {
+    height: 15px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    border-radius: 3px;
+    width: 120px;
+}

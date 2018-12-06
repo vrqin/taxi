@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>USB 录音盒Web二次开发demo</title>
+    <!--<link href="Style.css" rel="stylesheet" type="text/css" />-->
+</head>
+
+<script language="javascript" type="text/javascript" src="js/uboxweb.js"></script>
+
+<script language=javascript>
+    //function window.onbeforeunload()
+    //{
+    //	if(event.clientX>document.body.clientWidth&&event.clientY<0||event.altKey||event.ctrlKey)
+    //	{
+    //		ubox_CloseDevice();
+    //		Phonic_usb.CloseLogFile();
+    //		//判断event.altKey是为了Alt+F4关闭的情况；判断event.ctrlKey是为了Ctrl+W关闭的情况
+    //		//document.body.clientWidth不包括滚动条，而关闭按钮恰好在滚动条右侧。
+    //		window.event.returnValue="";
+    //	}
+    //}
+</script>
+
+
+<script>
+    //getting the instance of the plugin so we can use it every time
+
+    function init() {
+//	Phonic_usb.OpenLogFile("D:\\Program Files (x86)\\ubox_plugin\\phonic_usb.ocx");
+        Phonic_usb.OpenLogFile(0);
+        ubox_CloseDevice();
+        ubox_openDevice();
+
+        //Phonic_usb.UboxDeleteFile("E:\\usb\\bin\\recorder-dir\\ubox-20141120-103420.log");
+
+    }
+
+    window.callback_hello = function () {
+        alert("abc");
+
+    }
+
+    function CheckBrowser() {
+        var s = navigator.userAgent;//alert(s);
+        var a = s.indexOf("Apple");
+        var c = s.indexOf("Chrome");
+        var ie = s.indexOf("MSIE");
+
+        if (c > 0)//is there chrome
+        {
+            alert("Chrome dont like functions with parameters.");
+            return true;
+        }
+
+        if (ie > 0)//is there chrome
+        {
+            alert("Internet Explorer dont like NPAPI at all.");
+            return true;
+        }
+
+        if (a > 0)//is there chrome
+        {
+            alert("Apple Safari dont like NPAPI at all.");
+            return true;
+        }
+
+        return false;
+    }
+
+
+</script>
+
+<body id="bodyId" onload="init();">
+<p>
+    <textarea id="StatusArea" rows="13" name="S1" cols="86"></textarea>
+</p>
+
+
+<br style="display: none">
+<embed type="application/ubox-plugin" width=0 height=0>
+<br>
+
+
+<p><input type="button" value="打开设备" name="B3" onClick="ubox_openDevice()">
+    <input type="button" value="关闭设备" name="B6" onclick="ubox_CloseDevice()"></p>
+
+
+<p>
+    <input type="file" value="浏览" name="C13" id="filename" size="20">
+    <input type="button" value="播放文件" name="B13" onclick="ubox_playfile(filename.value)">
+    <input type="button" value="停止播放" name="B14" onclick="ubox_stopplay()"></p>
+
+
+<form>
+    <p>
+        <input type="text" value="10000" name="T1" size="20" id="dialcode">
+        <input type="button" value="拨号" name="B10" onclick="ubox_dialnum(dialcode.value)"></p>
+</form>
+
+<p>
+    <input type="button" value="开始录音" name="B7" onclick="ubox_RecordFile()">
+    <input type="button" value="停止录音" name="B8" onclick="ubox_StopRecord()">
+</p>
+
+
+<p><input type="button" value="开始量线路电压" name="B7" onclick="ubox_Start_read_line_voltage()">
+    <input type="button" value="停止量线路电压" name="B8" onclick="ubox_Stop_read_line_voltage()"></p>
+
+<p><input type="button" value="获取用户号" name="B7" onclick="ubox_Get_User()">
+    <input type="button" value="获取硬件版本号" name="B8" onclick="ubox_Get_DeviceVersion()"></p>
+
+<p><input type="button" value="软摘机" name="B7" onclick="ubox_hook_off()">
+    <input type="button" value="软挂机" name="B8" onclick="ubox_hook_on()"></p>
+
+<p><input type="button" value="读eeprom" name="B7" onclick="ubox_read_eeprom()">
+    <input type="button" value="写eeprom" name="B8" onclick="ubox_write_eeprom()"></p>
+</body>
+
+</html>

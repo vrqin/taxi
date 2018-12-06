@@ -1,0 +1,43 @@
+package com.alipay.api.domain;
+
+import com.alipay.api.AlipayObject;
+import com.alipay.api.internal.mapping.ApiField;
+import com.alipay.api.internal.mapping.ApiListField;
+
+import java.util.List;
+
+public class AlipayItemGoodsList extends AlipayObject {
+    private static final long serialVersionUID = 1443312179582117716L;
+
+    @ApiField("desc")
+    private String desc;
+
+    @ApiListField("goods_list")
+    @ApiField("string")
+    private List<String> goodsList;
+
+    public String getDesc() {
+        /* 33 */
+        return this.desc;
+    }
+
+    public void setDesc(String desc) {
+        /* 36 */
+        this.desc = desc;
+    }
+
+    public List<String> getGoodsList() {
+        /* 40 */
+        return this.goodsList;
+    }
+
+    public void setGoodsList(List<String> goodsList) {
+        /* 43 */
+        this.goodsList = goodsList;
+    }
+}
+
+/* Location:           C:\Users\huangzhike\Desktop\alipay-sdk-java20160829220059\
+ * Qualified Name:     com.alipay.api.domain.AlipayItemGoodsList
+ * JD-Core Version:    0.6.0
+ */

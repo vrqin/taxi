@@ -1,0 +1,23 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<smart-kab>
+    <protocol>p</protocol>
+    <msid-prefix></msid-prefix>
+
+
+    <!-- 凤凰？-->
+    <sip>192.168.1.251</sip>
+    <tport>9988</tport>
+
+
+    <msid>30105010001</msid>
+    <pwd>123456</pwd>
+    <offline-gps-time>15</offline-gps-time> <!-- minute -->
+
+    <reconnect-interval>2</reconnect-interval>
+    <get-kabs-sleep>2</get-kabs-sleep> <!-- minute -->
+
+    <!-- 路径配置 -->
+    <check-interval>5</check-interval>
+    <excep-log>error.log</excep-log>
+    <ws-addr>192.168.1.231:8888</ws-addr>
+</smart-kab>

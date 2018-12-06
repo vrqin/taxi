@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xmlns:task="http://www.springframework.org/schema/task"
+        xsi:schemaLocation=
+                "http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans.xsd
+                 http://www.springframework.org/schema/context
+                 http://www.springframework.org/schema/context/spring-context.xsd
+                 http://www.springframework.org/schema/aop
+                 http://www.springframework.org/schema/aop/spring-aop.xsd
+                 http://www.springframework.org/schema/tx
+                 http://www.springframework.org/schema/tx/spring-tx.xsd
+                 http://www.springframework.org/schema/task
+                 http://www.springframework.org/schema/task/spring-task.xsd">
+    <!--调度任务配置-->
+    <task:annotation-driven/>
+
+    <!--注解扫描配置-->
+    <context:annotation-config/>
+
+    <context:component-scan base-package="com.spring.jersy.hibernate" annotation-config="true"/>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:hibernate.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="c3p0DataSource" destroy-method="close" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${driverClass}"/>
+        <property name="jdbcUrl" value="${url}"/>
+        <property name="user" value="${username}"/>
+        <property name="password" value="${password}"/>
+        <property name="initialPoolSize" value="${c3p0.pool.initialPoolSize}"/>
+        <property name="minPoolSize" value="${c3p0.pool.minPoolSize}"/>
+        <property name="maxPoolSize" value="${c3p0.pool.maxPoolSize}"/>
+        <property name="maxIdleTime" value="${c3p0.pool.maxIdleTime}"/>
+    </bean>
+
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="c3p0DataSource"/>
+        <property name="packagesToScan">
+            <list>
+                <value>com.spring.jersy.hibernate</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+                <prop key="hibernate.max_fetch_depth">${hibernate.max_fetch_depth}</prop>
+                <!--<prop key="hibernate.current_session_context_class">${hibernate.current_session_context_class}</prop>-->
+                <prop key="javax.persistence.validation.mode">none</prop>
+            </props>
+
+        </property>
+
+
+    </bean>
+
+
+    <!--事务管理-->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+          p:sessionFactory-ref="sessionFactory"
+          p:globalRollbackOnParticipationFailure="false"/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*" propagation="REQUIRED"/>
+            <tx:method name="del*" propagation="REQUIRED"/>
+            <tx:method name="upd*" propagation="REQUIRED"/>
+            <tx:method name="*" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:advisor
+                pointcut="execution(* com.spring.jersy.hibernate.*.service.*.*(..))"
+                advice-ref="txAdvice"/>
+    </aop:config>
+    <aop:config>
+        <aop:advisor
+                pointcut="execution(* com.spring.jersy.hibernate.*.service.*.*.*(..))"
+                advice-ref="txAdvice"/>
+    </aop:config>
+
+
+    <!--&lt;!&ndash; 开启AOP监听 只对当前配置文件有效 &ndash;&gt;-->
+    <aop:aspectj-autoproxy expose-proxy="true" proxy-target-class="true"/>
+
+
+</beans>

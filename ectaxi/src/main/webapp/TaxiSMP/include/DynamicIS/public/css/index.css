@@ -1,0 +1,276 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* header */
+header {
+    width: auto;
+    height: 80px;
+    background: #E57373 url(../image/headertitleMin.png) no-repeat 20px center;
+    position: relative;
+    z-index: 99;
+}
+
+ul#firstMenu {
+    width: 540px;
+    height: 100%;
+    margin-left: 318px;
+    float: left;
+}
+
+li.firstMenuLi {
+    width: 72px;
+    height: 66px;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    background: #E57373;
+    margin: 5px 9px 0;
+    float: left;
+    cursor: pointer;
+}
+
+li.firstMenuLi span.icon {
+    font-size: 32px;
+    line-height: 47px;
+    display: block;
+}
+
+li.firstMenuLi:hover {
+    background: rgba(255, 255, 255, 0.80);
+}
+
+li.firstMenuLi:hover span.icon {
+    color: #E57373;
+}
+
+li.firstMenuLi:hover p {
+    color: #747474;
+}
+
+li.firstMenuLiActive, li.firstMenuLiHover {
+    background: rgba(255, 255, 255, 0.80);
+    color: #E57373;
+    position: relative;
+}
+
+li.firstMenuLiActive p {
+    color: #747474;
+}
+
+li.firstMenuLiActive::after, li.firstMenuLiHover::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    border: 4px solid transparent;
+    border-bottom-color: white;
+    position: absolute;
+    bottom: -9px;
+    left: 32px;
+}
+
+li.firstMenuLiHover::after {
+    border-bottom-color: #2c353a;
+}
+
+div#setAndOut {
+    height: 100%;
+    padding-right: 24px;
+}
+
+div#setAndOut p {
+    font-size: 16px;
+    text-align: right;
+    color: white;
+    padding: 16px 0 8px;
+}
+
+dl#setAndOutDl {
+    overflow: hidden;
+}
+
+dl#setAndOutDl dd {
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    font-weight: 400;
+    color: #2c353a;
+    float: right;
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+dl#setAndOutDl dd img {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* 导航 */
+
+nav.horizontal {
+    display: none;
+    width: 100%;
+    height: 90px;
+    background: #2c353a;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.43);
+    position: absolute;
+    top: 80px;
+    left: 0;
+}
+
+nav.vertical {
+    width: 120px;
+    background: #f0f0f0;
+    box-shadow: 0 0 0 1px #e0e0e0;
+    float: left;
+    position: relative;
+}
+
+nav.floatRight {
+    float: right;
+}
+
+nav.positionBottom {
+    top: auto;
+    bottom: 0;
+}
+
+nav.removePosition {
+    top: 0;
+    position: relative;
+}
+
+ul.secondMenu {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+nav.vertical ul.secondMenu {
+    overflow-x: hidden;
+}
+
+ul#secondMenu01 {
+    display: block;
+}
+
+li.secondMenuLi {
+    width: 120px;
+    height: 90px;
+    text-align: center;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+
+li.secondMenuLi a {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+nav.vertical li.secondMenuLi {
+    width: auto;
+    float: none;
+}
+
+nav.horizontal li.secondMenuLi {
+    opacity: 0.5;
+}
+
+nav.horizontal li.secondMenuLi a {
+    color: white;
+}
+
+nav.vertical li.secondMenuLi a {
+    color: #E57373;
+}
+
+nav.vertical li.secondMenuLiActive::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 100%;
+    background: #E57373;
+    position: absolute;
+}
+
+nav.vertical li.secondMenuLi p {
+    color: #2c353a;
+}
+
+li.secondMenuLi span.icon {
+    display: block;
+    font-size: 20px;
+    padding: 25px 0 9px;
+}
+
+nav.horizontal li.secondMenuLi:hover {
+    background: #191F22;
+    opacity: 1;
+}
+
+nav.vertical li.secondMenuLi:hover {
+    background: white;
+}
+
+nav.horizontal li.secondMenuLiActive {
+    background: #191f22;
+    opacity: 1;
+}
+
+nav.vertical li.secondMenuLiActive {
+    background: white;
+}
+
+nav.vertical li.secondMenuLiActive a > * {
+    color: #E57373;
+}
+
+/* iframe */
+article {
+    width: auto;
+}
+
+article iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 设置 */
+section#setSelect {
+    display: none;
+    width: 170px;
+    background: #2c353a;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.43);
+    position: absolute;
+    top: 80px;
+    right: 0;
+}
+
+section#setSelect ul li {
+    width: 100%;
+    height: 36px;
+    font-size: 14px;
+    color: white;
+    line-height: 36px;
+}
+
+section#setSelect ul li label {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+section#setSelect ul li label:hover {
+    background: #191f22;
+}
+
+section#setSelect ul li label input {
+    margin: 0px 8px;
+    position: relative;
+    top: 3px;
+}

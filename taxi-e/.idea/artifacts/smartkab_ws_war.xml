@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="smartkab-ws:war">
+    <output-path>$PROJECT_DIR$/smartkab/smartkab-ws/target</output-path>
+    <root id="archive" name="smartkab-ws.war">
+      <element id="artifact" artifact-name="smartkab-ws:war exploded" />
+    </root>
+  </artifact>
+</component>

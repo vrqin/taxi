@@ -1,0 +1,71 @@
+package com.speedtalk.protocol.constants;
+
+public class MessIdConstants {
+    public static final byte[] HEAD = new byte[]{-86, 127};
+    public static final byte[] ENDING = new byte[]{13, 10};
+    public static final byte UN_SPLIT = 0;
+    public static final byte SPLIT = 1;
+    public static final byte[] DEFAULT_ID = new byte[11];
+    public static final int HEAN_POS = 2;
+    public static final int MESS_ID_POS = 4;
+    public static final byte REGISTER = 1;
+    public static final byte REGISTER_RESP = 2;
+    public static final byte LOGIN = 3;
+    public static final byte LOGIN_RESP = 4;
+    public static final byte APPLY_JOIN_GRP = 5;
+    public static final byte APPLY_JOIN_GRP_RESP = 6;
+    public static final byte CREATE_GRP = 7;
+    public static final byte CREATE_GRP_RESP = 8;
+    public static final byte ALLOW_JOIN_GRP = 9;
+    public static final byte ALLOW_JOIN_GRP_RESP = 16;
+    public static final byte GPS = 17;
+    public static final byte DELAYED_GPS = 19;
+    public static final byte SETTING = 21;
+    public static final byte SETTING_RESP = 22;
+    public static final byte SMS = 23;
+    public static final byte SMS_RESP = 24;
+    public static final byte PICTURE = 25;
+    public static final byte PICTURE_RESP = 32;
+    public static final byte TRANSFER = 33;
+    public static final byte TRANSFER_RESP = 34;
+    public static final byte PTT = 35;
+    public static final byte PTT_RESP = 36;
+    public static final byte CREATE_TEMP_GRP = 37;
+    public static final byte CREATE_TEMP_GRP_RESP = 38;
+    public static final byte REMOVE_TEMP_GRP = 39;
+    public static final byte REMOVE_TEMP_GRP_RESP = 40;
+    public static final byte NOTICE = 41;
+    public static final byte HUP = 49;
+    public static final byte HUP_RESP = 50;
+    public static final byte VOICE = 51;
+    public static final byte VOICE_RESP = 52;
+    public static final byte CHANGE_GRP = 53;
+    public static final byte CHANGE_GRP_RESP = 54;
+    public static final byte QUERY_GRP = 55;
+    public static final byte QUERY_GRP_RESP = 56;
+    public static final byte EDIT_TEMP_GRP = 57;
+    public static final byte EDIT_TEMP_GRP_RESP = 64;
+    public static final byte HB = 65;
+    public static final byte HB_RESP = 66;
+    public static final byte START_MONITOR = 67;
+    public static final byte START_MONITOR_RESP = 68;
+    public static final byte END_MONITOR = 69;
+    public static final byte END_MONITOR_RESP = 70;
+    public static final byte UPDATE_ADDR = 73;
+    public static final byte UPDATE_ADDR_RESP = 80;
+    public static final byte UPGRADE = 81;
+    public static final byte QUERY_MEMBER = 83;
+    public static final byte QUERY_MEMBER_RESP = 84;
+    public static final byte CALL_SET = 85;
+    public static final byte CALL_SET_RESP = 86;
+    public static final byte DETECTION = 87;
+    public static final byte NOTICE_CREATE_TEMP_GRP = 0;
+    public static final byte NOTICE_DELETE_TEMP_GREP = 1;
+    public static final byte NOTICE_CALL = 2;
+    public static final byte NOTICE_HUP = 3;
+    public static final byte NOTICE_QUIT_TEMP_GRP = 4;
+    public static final byte DEFAULT_HB = 30;
+
+    public MessIdConstants() {
+    }
+}

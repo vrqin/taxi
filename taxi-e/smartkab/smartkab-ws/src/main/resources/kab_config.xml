@@ -1,0 +1,34 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<kab>
+    <!-- MQ -->
+    <queue_addr>tcp://192.168.1.251:61616</queue_addr>
+
+    <sms-tpl-id>22655</sms-tpl-id>
+    <server-addr>192.168.1.231</server-addr>
+
+    <!-- 路径配置 -->
+    <check-interval>5</check-interval>
+    <excep-log>error.log</excep-log>
+
+    <ios-version>1.0.0</ios-version>
+    <ios-update-url>https://itunes.apple.com/cn/app/id1192673529?l=en&amp;mt=8</ios-update-url>
+    <ios-force-version></ios-force-version>
+    <ios-update-desc></ios-update-desc>
+
+    <ios-p-version>1.0.0</ios-p-version>
+    <ios-p-update-url>https://itunes.apple.com/cn/app/id1192673529?l=en&amp;mt=8</ios-p-update-url>
+    <ios-p-force-version></ios-p-force-version>
+    <ios-p-update-desc></ios-p-update-desc>
+
+    <android-version>1.0.0</android-version>
+    <android-update-url>https://itunes.apple.com/cn/app/id1192673529?l=en&amp;mt=8</android-update-url>
+    <android-force-version></android-force-version>
+    <android-update-desc></android-update-desc>
+
+    <android-p-version>1.0.0</android-p-version>
+    <android-p-update-url>https://itunes.apple.com/cn/app/id1192673529?l=en&amp;mt=8</android-p-update-url>
+    <android-p-force-version></android-p-force-version>
+    <android-p-update-desc></android-p-update-desc>
+
+
+</kab>

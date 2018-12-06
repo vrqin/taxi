@@ -1,0 +1,215 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="zh-cn">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>USB 录音盒Web二次开发demo</title>
+    <link href="Style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<script language="javascript" type="text/javascript" src="js/uboxweb.js"></script>
+
+<body>
+
+<p>
+    <textarea id="StatusArea" rows="13" name="S1" cols="86"></textarea>
+
+
+    <OBJECT ID="Phonic_usb" WIDTH="" HEIGHT="" CLASSID="CLSID:BB4780D9-391E-41B5-B366-434ADCFD7D10">
+
+    </OBJECT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=PlugIn(uboxHandle)>
+
+        Ubox_Plug_In(uboxHandle)
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=HookOff(uboxHandle)>
+        Ubox_hookoff(uboxHandle)
+
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=HangUp(uboxHandle)>
+        //alert("电话挂机")
+        Ubox_hookon(uboxHandle)
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb"
+            EVENT=CallId(uboxHandle,callerNumber,callerTime,callerName)>
+        //      alert("callID")
+        Ubox_CallId(uboxHandle, callerNumber, callerTime, callerName)
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=DeviceAlarm(uboxHandle)>
+
+        //PhonicusbControl_OnPLugIn(uboxHandle)
+        ubox_DeviceAlarm(uboxHandle)
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=DeviceError(uboxHandle)>
+
+        //PhonicusbControl_OnPLugIn(uboxHandle)
+        //alert("电话挂机")
+        ubox_DeviceError(uboxHandle)
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=DtmfKey(uboxHandle,dtmfCode)>
+        //  alert("anjian")
+        ubox_DtmfKey(uboxHandle, dtmfCode)
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=HangIng(uboxHandle)>
+
+        ubox_HangIng(uboxHandle)
+        //alert("电话挂机")
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=LineVoltage(uboxHandle,voltage)>
+
+
+        //alert("线路电压")
+        ubox_LineVoltage(uboxHandle, voltage)
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=PlayEnd(uboxHandle)>
+
+        ubox_PlayEnd(uboxHandle)
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=PlayError(uboxHandle)>
+
+
+        //alert("电话挂机")
+        ubox_PlayError(uboxHandle)
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=PlugOut(uboxHandle)>
+
+        ubox_PlugOut(uboxHandle)
+
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=Ring(uboxHandle)>
+
+
+        ubox_Ring(uboxHandle)
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=RingCancel(uboxHandle)>
+
+
+        ubox_RingCancel(uboxHandle)
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=RingStop(uboxHandle)>
+
+
+        ubox_RingStop(uboxHandle)
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=StreamVoice(uboxHandle, pVoice, size)>
+
+
+        //alert("电话挂机")
+        ubox_handle_streamVoice(uboxHandle, pVoice, size)
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=ToneBusy(uboxHandle)>
+
+
+        ubox_ToneBusy(uboxHandle)
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="javascript" type="text/javascript" FOR="Phonic_usb" EVENT=Polarity(uboxHandle)>
+
+
+        alert("对方摘机或者挂机")
+
+    </SCRIPT>
+
+
+    <SCRIPT LANGUAGE="JavaScript" FOR="window" EVENT="onLoad()">
+        <!--
+        Phonic_usb.OpenLogFile(0);
+        Phonic_usb.UboxDeleteFile("E:\\usb\\bin\\recorder-dir\\line-769-2015-05-21-11-11-23-671.wav");
+        ubox_CloseDevice();
+        ubox_openDevice();
+        -->
+    </SCRIPT>
+
+    <SCRIPT LANGUAGE="JavaScript" FOR="window" EVENT="onunLoad()">
+        <!--
+        ubox_CloseDevice();
+        Phonic_usb.CloseLogFile();
+        -->
+    </SCRIPT>
+
+    <!--
+    <p><input  type="button" value="打开设备" name="B3" onClick="ubox_openDevice()">
+    //<input type="button" value="关闭设备" name="B6" onclick="ubox_CloseDevice()"></p>
+
+    -->
+<p>
+<form name="lineselect">
+    <input type="radio" id=lineid1 checked="checked" name="linenum" value="1" disable="true"
+           onclick="changelinenum(this)"/>
+    line 1
+
+    <input type="radio" id=lineid2 name="linenum" value="2" disable="true" onclick="changelinenum(this)"/>
+    line 2
+</form>
+</p>
+
+<p>
+    <input type="file" value="浏览" name="C13" id="filename" size="20">
+    <input type="button" value="播放文件" name="B13" onclick="ubox_playfile(filename.value)">
+    <input type="button" value="停止播放" name="B14" onclick="ubox_stopplay()"></p>
+
+
+<form>
+    <p>
+        <input type="text" name="T1" size="20" id="dialcode">
+        <input type="button" value="拨号" name="B10" onclick="ubox_dialnum(dialcode.value)"></p>
+</form>
+<p><input type="button" value="开始录音" name="B7" onclick="ubox_RecordFile()">
+    <input type="button" value="停止录音" name="B8" onclick="ubox_StopRecord()"></p>
+
+<p><input type="button" value="开始量线路电压" name="B7" onclick="ubox_Start_read_line_voltage()">
+    <input type="button" value="停止量线路电压" name="B8" onclick="ubox_Stop_read_line_voltage()"></p>
+
+<p><input type="button" value="获取用户号" name="B7" onclick="ubox_Get_User()">
+    <input type="button" value="获取硬件版本号" name="B8" onclick="ubox_Get_DeviceVersion()"></p>
+
+<p><input type="button" value="软摘机" name="B7" onclick="ubox_hook_off()">
+    <input type="button" value="软挂机" name="B8" onclick="ubox_hook_on()"></p>
+
+<p><input type="button" value="读eeprom" name="B7" onclick="ubox_read_eeprom()">
+    <input type="button" value="写eeprom" name="B8" onclick="ubox_write_eeprom()"></p>
+</body>
+
+</html>

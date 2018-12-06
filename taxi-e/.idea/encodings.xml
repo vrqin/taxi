@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-client" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-client/smartkab-client-driver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-order/smartkab-order-engine" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-order/smartkab-order-protocol" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-order/smartkab-order-ws" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-pay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-pay/smartkab-pay-alipay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-pay/smartkab-pay-wechat" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-pay/smartkab-pay-ws" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab-score-ws" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab/smartkab-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/smartkab/smartkab-ws" charset="UTF-8" />
+  </component>
+</project>

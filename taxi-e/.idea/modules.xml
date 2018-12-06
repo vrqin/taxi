@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ectaxi.iml" filepath="$PROJECT_DIR$/ectaxi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab/smartkab.iml" filepath="$PROJECT_DIR$/smartkab/smartkab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-client/smartkab-client.iml" filepath="$PROJECT_DIR$/smartkab-client/smartkab-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-client/smartkab-client-driver/smartkab-client-driver.iml" filepath="$PROJECT_DIR$/smartkab-client/smartkab-client-driver/smartkab-client-driver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-order/smartkab-order.iml" filepath="$PROJECT_DIR$/smartkab-order/smartkab-order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-order/smartkab-order-engine/smartkab-order-engine.iml" filepath="$PROJECT_DIR$/smartkab-order/smartkab-order-engine/smartkab-order-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-order/smartkab-order-protocol/smartkab-order-protocol.iml" filepath="$PROJECT_DIR$/smartkab-order/smartkab-order-protocol/smartkab-order-protocol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-order/smartkab-order-ws/smartkab-order-ws.iml" filepath="$PROJECT_DIR$/smartkab-order/smartkab-order-ws/smartkab-order-ws.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-pay/smartkab-pay.iml" filepath="$PROJECT_DIR$/smartkab-pay/smartkab-pay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-pay/smartkab-pay-alipay/smartkab-pay-alipay.iml" filepath="$PROJECT_DIR$/smartkab-pay/smartkab-pay-alipay/smartkab-pay-alipay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-pay/smartkab-pay-wechat/smartkab-pay-wechat.iml" filepath="$PROJECT_DIR$/smartkab-pay/smartkab-pay-wechat/smartkab-pay-wechat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-pay/smartkab-pay-ws/smartkab-pay-ws.iml" filepath="$PROJECT_DIR$/smartkab-pay/smartkab-pay-ws/smartkab-pay-ws.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab-score-ws/smartkab-score-ws.iml" filepath="$PROJECT_DIR$/smartkab-score-ws/smartkab-score-ws.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab/smartkab-server/smartkab-server.iml" filepath="$PROJECT_DIR$/smartkab/smartkab-server/smartkab-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smartkab/smartkab-ws/smartkab-ws.iml" filepath="$PROJECT_DIR$/smartkab/smartkab-ws/smartkab-ws.iml" />
+    </modules>
+  </component>
+</project>

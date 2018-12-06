@@ -1,0 +1,38 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* header */
+header {
+    background: #f29b76;
+}
+
+header div {
+    background: url(../image/headerTitle.png) no-repeat 14px center;
+}
+
+/* 登录框 */
+article > p > span.icon {
+    color: #f29b76;
+}
+
+article > em {
+    background: #f29b76;
+}
+
+input#submit {
+    color: #f29b76;
+    border: 2px solid #f29b76;
+}
+
+input#submit:hover {
+    box-shadow: inset 0px 0px 100px 100px #f29b76;
+}
+
+ul#pic {
+    border: 3px solid #f29b76;
+}
+
+ul#pic li {
+    background: url(../image/loginpic.png);
+}
+

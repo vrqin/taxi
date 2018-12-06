@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=78OhopFWz7wPFKlaFXA1DYPU"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/library/DistanceTool/1.2/src/DistanceTool_min.js"></script>
+
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css"/>
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            height: 100%;
+        }
+
+        #baidumaps {
+            /*background: red;*/
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="baidumaps"></div>
+</body>
+</html>
+
+<script>
+    var map = new BMap.Map('baidumaps');
+    var poi = new BMap.Point(116.307852, 40.057031);
+    map.centerAndZoom(poi, 16);
+    map.enableScrollWheelZoom();
+    var drawingManager = "";
+    OpenDrawingManager();
+
+
+    function OpenDrawingManager() {
+        var styleOptions = {
+            strokeColor: "red",    //边线颜色。
+            fillColor: "red",      //填充颜色。当参数为空时，圆形将没有填充效果。
+            strokeWeight: 3,       //边线的宽度，以像素为单位。
+            strokeOpacity: 0.8,	   //边线透明度，取值范围0 - 1。
+            fillOpacity: 0.6,      //填充的透明度，取值范围0 - 1。
+            strokeStyle: 'solid' //边线的样式，solid或dashed。
+        };
+        //实例化鼠标绘制工具
+        drawingManager = new BMapLib.DrawingManager(map, {
+            isOpen: false, //是否开启绘制模式
+            enableDrawingTool: true, //是否显示工具栏
+            drawingToolOptions: {
+                anchor: BMAP_ANCHOR_TOP_RIGHT, //位置
+                offset: new BMap.Size(5, 5) //偏离值
+            },
+            circleOptions: styleOptions, //圆的样式
+            polylineOptions: styleOptions, //线的样式
+            polygonOptions: styleOptions, //多边形的样式
+            rectangleOptions: styleOptions //矩形的样式
+        });
+
+        drawingManager.addEventListener('circlecomplete', OnCircleComplete);
+        drawingManager.addEventListener('markercomplete', OnMarkerComplete);      // 点
+        drawingManager.addEventListener('polygoncomplete', OnPolygonComplete);    // 多边形
+        drawingManager.addEventListener('polylinecomplete', OnPolylineComplete);  // 线
+        drawingManager.addEventListener('rectanglecomplete', OnRectangleComplete);// 矩形
+    }
+
+
+    function OnCircleComplete(e) {
+        ////console.info(e.getRadius());
+        ////console.info(e.getCenter().lng+","+e.getCenter().lat);
+    }
+
+    function OnMarkerComplete(e) {
+        alert("OnMarkerComplete+目前只支持画园");
+
+    }
+
+    function OnPolygonComplete(e) {
+        alert("OnPolygonComplete+目前只支持画园");
+    }
+
+    function OnPolylineComplete(e) {
+        alert("OnPolylineComplete+目前只支持画园");
+    }
+
+    function OnRectangleComplete(e) {
+        alert("OnRectangleComplete+目前只支持画园");
+    }
+
+</script>
