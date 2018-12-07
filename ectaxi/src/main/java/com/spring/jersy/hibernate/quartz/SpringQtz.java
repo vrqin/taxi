@@ -10,7 +10,7 @@ import com.spring.jersy.hibernate.publics.util.DateUtil;
 import com.spring.jersy.hibernate.publics.util.S;
 import com.spring.jersy.hibernate.publics.util.SpringUtils;
 import com.spring.jersy.hibernate.servlet.StartupServlet;
-import com.spring.jersy.hibernate.synch.Synch;
+
 import org.apache.log4j.Logger;
 import org.apache.commons.logging.LogFactory;
 import org.apache.log4j.Logger;
@@ -32,10 +32,6 @@ import java.util.List;
 public class SpringQtz {
     private static final Logger LOGGER = Logger.getLogger(SpringQtz.class);
 
-
-    @Autowired
-
-    private Synch synch;
 
     public SpringQtz() {
 

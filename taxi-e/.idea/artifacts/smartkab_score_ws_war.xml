@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="smartkab-score-ws:war">
-    <output-path>$PROJECT_DIR$/smartkab-score-ws/target</output-path>
-    <root id="archive" name="smartkab-score-ws.war">
-      <element id="artifact" artifact-name="smartkab-score-ws:war exploded" />
-    </root>
-  </artifact>
-</component>
